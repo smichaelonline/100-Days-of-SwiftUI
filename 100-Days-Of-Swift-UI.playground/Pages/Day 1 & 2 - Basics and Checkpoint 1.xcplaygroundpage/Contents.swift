@@ -51,7 +51,4 @@ print("It is \(celsius)°C. In fahrenheit, that is \(fahrenheit)°F")
 
 // -------------------------------------------
 
-// DAY 3 & 4
-// ARRAYS
-
 

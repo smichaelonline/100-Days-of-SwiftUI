@@ -79,3 +79,40 @@ day = Weekdays.tuesday
 // can also write "day = .tuesday" since Swift is inferring the that day will be a type of weekday
 //One major benefit of enums is that Swift stores them in an optimized form – when we say Weekday.monday Swift is likely to store that using a single integer such as 0, which is much more efficient to store and check than the letters M, o, n, d, a, y.
 
+//----------------------
+// TYPE ANNOTATIONS
+// Type annotations allow us to be specific with what data types we want.
+//String
+let playerName: String = "Roy"
+//Int
+var luckyNumber: Int = 13
+//Double
+let pi: Double = 3.141
+// Bool
+var isAuthenticated: Bool = true
+//Array: holds lots of different values, all in the order you add them.
+var albums: [String] = ["Red", "Fearless"]
+//Dictionary: Dictionary holds lots of different values, where you get to decide how data should be accessed.
+var user: [String: String] = ["id": "@twostraws"]
+//Sets: holds lots of different values, but stores them in an order that’s optimized for checking what it contains.
+var books: Set<String> = Set(["The Bluest Eye", "Foundation", "Girl, Woman, Other"])
+
+// Swift must at all times know what data types your constants and variables contain.
+
+//------------------------
+// SUMMARY
+/*
+- Arrays let us store lots of values in one place, then read them out using integer indices. Arrays must always be specialized so they contain one specific type, and they have helpful functionality such as count, append(), and contains().
+- Dictionaries also let us store lots of values in one place, but let us read them out using keys we specify. They must be specialized to have one specific type for key and another for the value, and have similar functionality to arrays, such as contains() and count.
+- Sets are a third way of storing lots of values in one place, but we don’t get to choose the order in which they store those items. Sets are really efficient at finding whether they contain a specific item.
+- Enums let us create our own simple types in Swift so that we can specify a range of acceptable values such as a list of actions the user can perform, the types of files we are able to write, or the types of notification to send to the user.
+ - Swift must always know the type of data inside a constant or variable, and mostly uses type inference to figure that out based on the data we assign. However, it’s also possible to use type annotation to force a particular type.
+- Out of arrays, dictionaries, and sets, it’s safe to say that you’ll use arrays by far the most. After that comes dictionaries, and sets come a distant third.
+ */
+
+//CHECKPOINT 2:
+// Ceate an array of strings, then write some code that prints the number of items in the array and also the number of unique items in the array.
+var animals = ["Dog", "Bird", "Cat", "Monkey","Dog"]
+print("Total animals: \(animals.count)")
+var uniqueAnimals = Set(animals)
+print("Total unique animals: \(uniqueAnimals.count)")

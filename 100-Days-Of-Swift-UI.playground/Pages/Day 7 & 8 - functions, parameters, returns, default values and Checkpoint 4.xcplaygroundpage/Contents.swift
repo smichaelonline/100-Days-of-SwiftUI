@@ -143,4 +143,14 @@ func printTimeTable(for number: Int){
   // 3. inside the function we use the internal name for the parameter - number
 
 //----------------------
+// SETTING DEFAULT VALUES FOR PARAMETERS
+// As a performance optimization, Swift gives arrays just enough memory to hold their items plus a little extra so they can grow a little over time.
+
+// for the print times tables function example:
+// func printTimesTables(for number: Int, end: Int = 12) - sets 12 as default value for end parameter
+// if we don't need to set a value for the end parameter, we can just call (for: Int)
+
+// As a performance optimization, Swift gives arrays just enough memory to hold their items plus a little extra so they can grow a little over time. If more items are added to the array, Swift allocates more and more memory automatically, so that as little as possible is wasted.
+
+
 

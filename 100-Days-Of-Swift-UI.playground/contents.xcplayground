@@ -5,5 +5,6 @@
         <page name='Day 3 &amp; 4 - Arrays, dictionaries, sets, enums, type annotations and Checkpoint 2'/>
         <page name='Day 5 &amp; 6 - if, switch, ternary operators, loops and Checkpoint 3'/>
         <page name='Day 7 &amp; 8 - functions, parameters, returns, default values and Checkpoint 4'/>
+        <page name='Day 9 - closures, passing functions into function, and Checkpoint 5'/>
     </pages>
 </playground>

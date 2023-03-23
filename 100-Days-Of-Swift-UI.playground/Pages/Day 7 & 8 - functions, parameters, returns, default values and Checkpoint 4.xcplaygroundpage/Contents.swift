@@ -239,3 +239,36 @@ do {
 3. You should only consider integer square roots – don’t worry about the square root of 3 being 1.732, for example.
 4. If you can’t find the square root, throw a “no root” error.
 */
+
+enum SqrtError: Error {
+  case outOfBounds, noRoot
+}
+
+func sqrtOfInteger (of number: Int) throws {
+  var result = 1
+  
+  if number < 1 || number > 10_000{
+    throw SqrtError.outOfBounds
+  }
+  
+  for root in 1...100 {
+    result = root * root
+    if result == number {
+      print("The squareroot of \(number) is \(root)")
+    }
+  }
+  
+  if result != number {
+    throw SqrtError.noRoot
+  }
+}
+
+do {
+  try sqrtOfInteger(of: 70)
+} catch SqrtError.outOfBounds {
+  print("Please use a number between 1 and 10,000")
+} catch SqrtError.noRoot {
+  print("There is no even squareroot.")
+}
+
+

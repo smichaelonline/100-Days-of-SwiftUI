@@ -216,3 +216,38 @@ doImportantWork {
 } third: {
   print("This is third")
 }
+
+//SUMMARY
+/*
+ You can copy functions in Swift, and they work the same as the original except they lose their external parameter names.
+ All functions have types, just like other data types. This includes the parameters they receive along with their return type, which might be Void – also known as “nothing”.
+ You can create closures directly by assigning to a constant or variable.
+ Closures that accept parameters or return a value must declare this inside their braces, followed by the keyword in.
+ Functions are able to accept other functions as parameters. They must declare up front exactly what data those functions must use, and Swift will ensure the rules are followed.
+ In this situation, instead of passing a dedicated function you can also pass a closure – you can make one directly. Swift allows both approaches to work.
+ When passing a closure as a function parameter, you don’t need to explicitly write out the types inside your closure if Swift can figure it out automatically. The same is true for the return value – if Swift can figure it out, you don’t need to specify it.
+ If one or more of a function’s final parameters are functions, you can use trailing closure syntax.
+ You can also use shorthand parameter names such as $0 and $1, but I would recommend doing that only under some conditions.
+ You can make your own functions that accept functions as parameters, although in practice it’s much more important to know how to use them than how to create them.
+*/
+
+//CHECKPOINT 5
+// the problem:
+/*
+ Filter out any numbers that are even
+ Sort the array in ascending order
+ Map them to strings in the format “7 is a lucky number”
+ Print the resulting array, one item per line
+*/
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+let result = luckyNumbers.filter{$0.isMultiple(of:2) == false}.sorted().map{"\($0) is a lucky number!"}
+//filter uses isMultiple to check for even numbers and remove them from the array.
+// then sort the numbers so they are in ascending order
+// map then converts numbers into strings
+
+// for loop prints result, 1 item per line, 
+for item in result {
+  print(item)
+}

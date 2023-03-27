@@ -151,5 +151,68 @@ print(uppercaseTeam)
 
 //----------------------
 // How to accept functions as parameters
+// type annotation is what we use when specifying functions as parameters: we tell Swift what parameters the function accepts, as well its return type.
 
-// 
+// takes two parameters - one is the number of integers we want and also returns an array of integers. the second parameter is a function and accepts no parameters but will return an integer everytime its called.
+func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+  // repeatedly call a function to generate an integer, adding each value to an array, then send it all back.
+  
+  // we create a new empty array of integers - then loop as many times as requested
+  var numbers = [Int]()
+  // each time the loop goes, we call generator function that was passed in as a parameter. This will return one new integer that we put into the numbers array
+  for _ in 0..<size{
+    let newNumber = generator()
+    numbers.append(newNumber)
+  }
+  
+  //finished array is returned
+  return numbers
+}
+
+// the hardest part is the first line:
+    // func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+// break it down:
+  // we create a new function
+  // function is called makeArray()
+  // first parameter is an integer called size
+  // the second parameter is a function called generator, which accepts no parameters and returns an integer
+  // the whole function - returns an array of integers
+
+// now we can make arbitrary-sized integer arrays, passing in a function that should be used to generate each number:
+let rolls = makeArray(size:50){
+  Int.random(in: 1...20)
+}
+
+print(rolls)
+
+// we could also write something like this
+func generateNumber() -> Int {
+  Int.random(in: 1...20)
+}
+
+// this calls generate number 50 times to fill array.
+let newRolls = makeArray(size: 50, using: generateNumber)
+print(newRolls)
+
+// Note: you can make your function accept multiple function parameters if you want, in which case you can specify multiple trailing closures.
+
+// a function that accepts three function parameters - each accept no parameter and return nothing
+
+func doImportantWork(first: ()-> Void, second: ()-> Void, third: ()-> Void) {
+  print("About to start first task")
+  first()
+  print("About to start second task")
+  second()
+  print("About to start third task")
+  third()
+  print("Done!")
+}
+
+// how to call the above function:
+doImportantWork {
+  print("This is first")
+} second: {
+  print("This is second")
+} third: {
+  print("This is third")
+}

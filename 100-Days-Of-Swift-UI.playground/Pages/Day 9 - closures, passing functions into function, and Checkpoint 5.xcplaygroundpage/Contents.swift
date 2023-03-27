@@ -247,7 +247,7 @@ let result = luckyNumbers.filter{$0.isMultiple(of:2) == false}.sorted().map{"\($
 // then sort the numbers so they are in ascending order
 // map then converts numbers into strings
 
-// for loop prints result, 1 item per line, 
+// for loop prints result, 1 item per line
 for item in result {
   print(item)
 }

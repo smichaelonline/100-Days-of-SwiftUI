@@ -1,7 +1,4 @@
-//: [Previous](@previous)
+import Cocoa
 
-import Foundation
-
-var greeting = "Hello, playground"
-
-//: [Next](@next)
+// STRUCTS
+// 

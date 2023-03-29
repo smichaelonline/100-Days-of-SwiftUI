@@ -57,3 +57,7 @@ print(archer.vacationRemaining)
   // var archer2 = Employee.init(name: "Sterling Archer", vacationRemaining: 14)
 
 // Tip: If you assign a default value to a constant property, that will be removed from the initializer entirely. To assign a default but leave open the possibility of overriding it when needed, use a variable property.
+//----------------------
+
+//HOW TO COMPUTE PROPERTY VALUES DYNAMICALLY
+

@@ -60,4 +60,6 @@ print(archer.vacationRemaining)
 //----------------------
 
 //HOW TO COMPUTE PROPERTY VALUES DYNAMICALLY
-
+// Structs can have two kinds of property:
+  // a stored property:  a variable or constant that holds a peice of  data inside an instance of a struct
+  // a computed proprty: calculates the value of a property dynamically every time its accessed. Computed properties are a blend of both stored properties and functions - they are accessed like stored properties but work like functions. 
